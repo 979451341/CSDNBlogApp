@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="please_input_blog">请输入您的博客地址</string>
+    <string name="blog_address">https://blog.csdn.net/z979451341</string>
+    <string name="in_blog">进入博客</string>
+</resources>

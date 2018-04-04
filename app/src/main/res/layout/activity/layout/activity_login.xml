@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <TextView
+        android:layout_marginTop="500px"
+        android:gravity="center"
+        android:text="@string/please_input_blog"
+        android:textSize="50px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:background="@drawable/login_input_selected"
+        android:id="@+id/et_blog"
+        android:text="@string/blog_address"
+        android:layout_margin="60px"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="@string/in_blog"
+        android:id="@+id/btn"
+        android:background="@drawable/login_input_selected"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
