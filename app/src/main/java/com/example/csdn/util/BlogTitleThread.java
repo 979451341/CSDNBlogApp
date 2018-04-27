@@ -50,49 +50,16 @@ public class BlogTitleThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (doc == null) {
-            return ;
-        }
-        Elements container = doc.select("div.container");
-        if (container == null) {
-            return ;
-        }
-      //  Elements body = container.select("div.body");
-        Elements main = doc.select("div.main");
-        if (main == null) {
-            return ;
-        }
-        Document docMain = Jsoup.parse(main.toString());
-        Elements cMain = docMain.getElementsByClass("main");
-        if (cMain == null) {
-            return ;
-        }
+
+        Element body = doc.body();
+        Element container = body.getElementById("mainBox");
+        Element cMain = container.tagName("main");
+
         Document doccMain = Jsoup.parse(cMain.toString());
-        Elements list_item_new = doccMain.getElementsByClass("list_item_new");
-        if (list_item_new == null) {
-            return ;
-        }
-
-        Element article_list = list_item_new.first();
-        if (article_list == null) {
-            return ;
-        }
-
-        Elements list_item = article_list.getAllElements();
-
-        if (list_item == null) {
-            return ;
-        }
-        Element list = list_item.first();
-
-        Document docList = Jsoup.parse(list.toString());
-        Elements title = docList.getElementsByClass("article_title");
-
-        Document docT = Jsoup.parse(title.toString());
-        Elements t = docT.getElementsByClass("link_title");
+        Elements list_item_new = doccMain.getElementsByClass("article-list");
 
         String old = "";
-        for (Element item : t) {
+        for (Element item : list_item_new) {
 
             Elements links = item.getElementsByTag("a");
             for (Element link : links) {
